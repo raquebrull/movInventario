@@ -30,3 +30,6 @@ def consulta():
     resultados = [dict(zip(columnas, fila)) for fila in cursor.fetchall()]
 
     return jsonify(resultados)
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))  # Render pasa el puerto en la variable de entorno PORT
+    app.run(host='0.0.0.0', port=port)
