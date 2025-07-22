@@ -19,6 +19,7 @@ def home():
 def consulta():
     conn = get_connection()
     cursor = conn.cursor()
+    const res = await fetch(url, { mode: 'cors' });
 
     fechaD = request.args.get('fechaD')
     fechaH = request.args.get('fechaH')
