@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import pyodbc
 import os
 
 app = Flask(__name__)
+CORS(app) # Habilita CORS para todas las rutas
 
 def get_connection():
     return pyodbc.connect(
